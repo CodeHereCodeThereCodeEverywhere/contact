@@ -35,7 +35,9 @@ export default function Home() {
       </p>
       <div className="mt-2 flex  flex-col max-w-[1200px] ">
         <form onSubmit={handleAddContact} className='flex flex-col  items-end'>
-          <label className="font-semibold p-4">
+          <motion.label
+          initial={{opacity:0,x:-100}}
+          animate={{opacity:1,x:0}} className="font-semibold p-4">
             First Name :{' '}
             <input
               className="rounded-full text-neutral-500 px-2"
@@ -49,8 +51,12 @@ export default function Home() {
                 setContact({ ...contact, firstName: e.target.value })
               }
             />
-          </label>
-          <label className="font-semibold p-4">
+          </motion.label>
+          <motion.label 
+          initial={{opacity:0,x:-100,}}
+          animate={{opacity:1,x:0}}
+          transition={{delay:0.2}}
+          className="font-semibold p-4">
             Last Name :{' '}
             <input
               className="rounded-full text-neutral-500 px-2"
@@ -62,8 +68,12 @@ export default function Home() {
                 setContact({ ...contact, lastName: e.target.value })
               }
             />
-          </label>
-          <label className="font-semibold p-4  ">
+          </motion.label>
+          <motion.label 
+          initial={{opacity:0,x:-100,}}
+          animate={{opacity:1,x:0}}
+          transition={{delay:0.4}}
+          className="font-semibold p-4  ">
             Phone :{' '}
             <input
               className="rounded-full text-neutral-500 px-2 "
@@ -75,7 +85,7 @@ export default function Home() {
                 setContact({ ...contact, phone: e.target.value })
               }
             />
-          </label>
+          </motion.label>
           <button type="submit" className="ml-2 bg-blue-500 px-4 rounded-full max-w-[200px] mr-4  ">
             Add contact
           </button>
